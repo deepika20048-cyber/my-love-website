@@ -1,0 +1,1058 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>Our Love Story ❤️</title>
+
+<style>
+
+*{
+    box-sizing:border-box;
+}
+
+body{
+
+    margin:0;
+
+    min-height:100vh;
+
+    font-family:Arial,sans-serif;
+
+    background:
+    linear-gradient(
+        135deg,
+        #e8fff1,
+        #bfe8cf
+    );
+
+    color:#173b2c;
+
+}
+
+
+.card{
+
+    width:90%;
+
+    max-width:850px;
+
+    min-height:600px;
+
+    margin:40px auto;
+
+    padding:40px;
+
+    text-align:center;
+
+    background:
+    rgba(255,255,255,.55);
+
+    border-radius:30px;
+
+    box-shadow:
+    0 20px 50px
+    rgba(0,0,0,.15);
+
+}
+
+
+h1{
+
+    font-size:45px;
+
+}
+
+
+h2{
+
+    font-size:30px;
+
+}
+
+
+p{
+
+    font-size:17px;
+
+    line-height:1.7;
+
+}
+
+
+button{
+
+    border:none;
+
+    padding:13px 25px;
+
+    margin:15px 5px;
+
+    border-radius:30px;
+
+    background:#173b2c;
+
+    color:white;
+
+    font-size:15px;
+
+    cursor:pointer;
+
+}
+
+
+button:hover{
+
+    transform:scale(1.05);
+
+}
+
+
+/* PHOTO GRID */
+
+.memory-grid{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(3,1fr);
+
+    gap:15px;
+
+    margin-top:25px;
+
+}
+
+
+.memory{
+
+    background:white;
+
+    padding:7px;
+
+    border-radius:20px;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+
+.memory:hover{
+
+    transform:
+    translateY(-5px)
+    scale(1.03);
+
+}
+
+
+.memory img{
+
+    width:100%;
+
+    height:150px;
+
+    object-fit:cover;
+
+    border-radius:15px;
+
+}
+
+
+.memory p{
+
+    font-size:13px;
+
+    margin:8px 0;
+
+    font-weight:bold;
+
+}
+
+
+/* HIDDEN SLIDES */
+
+.slide{
+
+    display:none;
+
+}
+
+
+.slide.active{
+
+    display:block;
+
+}
+
+
+/* PHOTO POPUP */
+
+.popup{
+
+    position:fixed;
+
+    inset:0;
+
+    background:
+    rgba(0,0,0,.85);
+
+    display:none;
+
+    justify-content:center;
+
+    align-items:center;
+
+    z-index:1000;
+
+}
+
+
+.popup.active{
+
+    display:flex;
+
+}
+
+
+.popup-content{
+
+    text-align:center;
+
+    position:relative;
+
+}
+
+
+.popup img{
+
+    width:85vw;
+
+    max-width:600px;
+
+    max-height:70vh;
+
+    object-fit:contain;
+
+    border-radius:25px;
+
+    border:3px solid white;
+
+}
+
+
+.popup h2{
+
+    color:white;
+
+}
+
+
+.close{
+
+    position:absolute;
+
+    top:-20px;
+
+    right:-20px;
+
+    width:45px;
+
+    height:45px;
+
+    padding:0;
+
+    margin:0;
+
+    border-radius:50%;
+
+    background:white;
+
+    color:#173b2c;
+
+    font-size:25px;
+
+}
+
+
+@media(max-width:600px){
+
+    .card{
+
+        padding:25px;
+
+    }
+
+    h1{
+
+        font-size:35px;
+
+    }
+
+    .memory-grid{
+
+        grid-template-columns:
+        repeat(2,1fr);
+
+    }
+
+    .memory img{
+
+        height:120px;
+
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- SLIDE 1 -->
+
+<div class="card slide active">
+
+    <h1>
+        Hey My Love ❤️
+    </h1>
+
+    <p>
+
+        I made something special
+        just for you...
+
+        <br><br>
+
+        Are you ready to enter
+        our little world? 💌
+
+    </p>
+
+
+    <button onclick="nextSlide()">
+
+        Open My Heart ❤️
+
+    </button>
+
+</div>
+
+
+
+<!-- SLIDE 2 -->
+
+<div class="card slide">
+
+    <h2>
+        Our Little Story 💚
+    </h2>
+
+    <p>
+
+        Some people enter our life
+        unexpectedly...
+
+        <br><br>
+
+        But somehow,
+        they become our favourite person.
+
+        <br><br>
+
+        And for me,
+        that person is you. ❤️
+
+    </p>
+
+
+    <button onclick="nextSlide()">
+
+        Continue →
+
+    </button>
+
+</div>
+
+
+
+<!-- SLIDE 3 -->
+
+<div class="card slide">
+
+    <h2>
+        Our Memories 📸❤️
+    </h2>
+
+    <p>
+
+        Click any picture...
+
+        <br>
+
+        Something special happens. 🎵
+
+    </p>
+
+
+    <div class="memory-grid">
+
+
+        <!-- PHOTO 1 -->
+
+        <div class="memory"
+
+        onclick="openPhoto(
+        'couple1.png',
+        'Our Beginning ❤️'
+        )">
+
+            <img src="couple1.png">
+
+            <p>
+                Our Beginning ❤️
+            </p>
+
+        </div>
+
+
+
+        <!-- PHOTO 2 -->
+
+        <div class="memory"
+
+        onclick="openPhoto(
+        'couple2.png',
+        'Our Happy Days 🥰'
+        )">
+
+            <img src="couple2.png">
+
+            <p>
+                Our Happy Days 🥰
+            </p>
+
+        </div>
+
+
+
+        <!-- PHOTO 3 -->
+
+        <div class="memory"
+
+        onclick="openPhoto(
+        'couple3.png',
+        'Little Moments 💕'
+        )">
+
+            <img src="couple3.png">
+
+            <p>
+                Little Moments 💕
+            </p>
+
+        </div>
+
+
+
+        <!-- PHOTO 4 -->
+
+        <div class="memory"
+
+        onclick="openPhoto(
+        'couple4.png',
+        'Our Outing 📍'
+        )">
+
+            <img src="couple4.png">
+
+            <p>
+                Our Outing 📍
+            </p>
+
+        </div>
+
+
+
+        <!-- PHOTO 5 -->
+
+        <div class="memory"
+
+        onclick="openPhoto(
+        'couple5.png',
+        'My Favourite Memory ❤️'
+        )">
+
+            <img src="couple5.png">
+
+            <p>
+                My Favourite Memory ❤️
+            </p>
+
+        </div>
+
+
+
+        <!-- PHOTO 6 -->
+
+        <div class="memory"
+
+        onclick="openPhoto(
+        'couple6.png',
+        'Still You & Me 💚'
+        )">
+
+            <img src="couple6.png">
+
+            <p>
+                Still You & Me 💚
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <button onclick="nextSlide()">
+
+        Next Memory →
+
+    </button>
+
+</div>
+
+
+
+<!-- SLIDE 4 -->
+
+<div class="card slide">
+
+    <h2>
+        Our Special Date 💍
+    </h2>
+
+    <h1>
+        25 • 12 • 2022
+    </h1>
+
+    <p>
+
+        A date that became
+        a beautiful memory.
+
+        <br><br>
+
+        And if I could choose again...
+
+        <br>
+
+        I would still choose you. ❤️
+
+    </p>
+
+
+    <button onclick="nextSlide()">
+
+        Next ❤️
+
+    </button>
+
+</div>
+
+
+
+<!-- SLIDE 5 -->
+
+<div class="card slide">
+
+    <h2>
+        Questions For You 💌
+    </h2>
+
+    <p>
+
+        What is your favourite
+        memory of us?
+
+    </p>
+
+
+    <input
+    id="answer"
+    placeholder="Type your answer here..."
+    style="
+    width:90%;
+    padding:15px;
+    border-radius:15px;
+    border:1px solid #aaa;
+    font-size:16px;
+    ">
+
+
+    <br>
+
+
+    <button onclick="saveAnswer()">
+
+        Save My Answer ❤️
+
+    </button>
+
+
+    <button onclick="nextSlide()">
+
+        Next →
+
+    </button>
+
+</div>
+
+
+
+<!-- SLIDE 6 --><!-- QUESTIONS SLIDE -->
+
+<div class="card slide">
+
+    <h2>Questions For You 💌</h2>
+
+    <p>
+        Answer these honestly... 🥰
+    </p>
+
+    <input
+        id="answer1"
+        placeholder="When did you first realise you liked me? ❤️"
+        style="
+        width:90%;
+        padding:15px;
+        margin:10px;
+        border-radius:15px;
+        border:1px solid #aaa;
+        font-size:16px;
+        ">
+
+    <input
+        id="answer2"
+        placeholder="What is your favourite memory of us? 🥰"
+        style="
+        width:90%;
+        padding:15px;
+        margin:10px;
+        border-radius:15px;
+        border:1px solid #aaa;
+        font-size:16px;
+        ">
+
+    <input
+        id="answer3"
+        placeholder="What do you love most about me? ❤️"
+        style="
+        width:90%;
+        padding:15px;
+        margin:10px;
+        border-radius:15px;
+        border:1px solid #aaa;
+        font-size:16px;
+        ">
+
+    <input
+        id="answer4"
+        placeholder="Where would you take me for our next outing? 📍"
+        style="
+        width:90%;
+        padding:15px;
+        margin:10px;
+        border-radius:15px;
+        border:1px solid #aaa;
+        font-size:16px;
+        ">
+
+    <input
+        id="answer5"
+        placeholder="What is one thing you want us to do together? 💚"
+        style="
+        width:90%;
+        padding:15px;
+        margin:10px;
+        border-radius:15px;
+        border:1px solid #aaa;
+        font-size:16px;
+        ">
+
+    <button onclick="saveAllAnswers()">
+        Save My Answers ❤️
+    </button>
+
+    <button onclick="nextSlide()">
+        Next Memory →
+    </button>
+
+</div>
+
+<div class="card slide">
+
+    <h2>
+        A Little Love Quote 💕
+    </h2>
+
+    <p style="font-size:24px;">
+
+        "Somewhere between
+        all our conversations,
+        laughs and memories...
+
+        <br><br>
+
+        you became my favourite
+        part of every day." ❤️
+
+    </p>
+
+
+    <button onclick="nextSlide()">
+
+        Continue →
+
+    </button>
+
+</div>
+
+
+
+<!-- SLIDE 7 -->
+
+<div class="card slide">
+
+    <h2>
+        Our Future 🌙
+    </h2>
+
+    <p>
+
+        More memories.
+
+        <br>
+
+        More adventures.
+
+        <br>
+
+        More silly moments.
+
+        <br>
+
+        More reasons to smile.
+
+        <br><br>
+
+        And hopefully...
+
+        <br>
+
+        lots and lots of
+        beautiful days together. ❤️
+
+    </p>
+
+
+    <button onclick="nextSlide()">
+
+        One Last Thing →
+
+    </button>
+
+</div>
+
+
+
+<!-- SLIDE 8 -->
+
+<div class="card slide">
+
+    <h1>
+        Still You. ❤️
+    </h1>
+
+    <p>
+
+        After everything...
+
+        <br><br>
+
+        If I had to choose again,
+
+        <br>
+
+        I would still choose YOU.
+
+        <br><br>
+
+        Happy Anniversary,
+        My Love. 💚
+
+    </p>
+
+
+    <button onclick="restart()">
+
+        Read Again ↻
+
+    </button>
+
+</div>
+
+
+<audio id="loveSong" src="love-song.mp3" loop></audio>
+<!-- PHOTO POPUP -->
+
+<div
+class="popup"
+id="popup">
+
+    <div class="popup-content">
+
+
+        <button
+        class="close"
+        onclick="closePhoto()">
+
+            ×
+
+        </button>
+
+
+        <img
+        id="popupImage">
+
+
+        <h2
+        id="popupTitle">
+        </h2>
+
+    </div>
+
+</div>
+
+
+
+<!-- JAVASCRIPT -->
+
+<script>
+
+
+let currentSlide = 0;
+
+
+const slides =
+document.querySelectorAll(".slide");
+
+
+
+function nextSlide(){
+
+    slides[currentSlide]
+    .classList.remove("active");
+
+
+    currentSlide++;
+
+
+    if(currentSlide >= slides.length){
+
+        currentSlide =
+        slides.length - 1;
+
+    }
+
+
+    slides[currentSlide]
+    .classList.add("active");
+
+}
+
+
+
+function restart(){
+
+    slides[currentSlide]
+    .classList.remove("active");
+
+
+    currentSlide = 0;
+
+
+    slides[0]
+    .classList.add("active");
+
+}
+
+
+function openPhoto(image, title){
+
+    document
+    .getElementById("popupImage")
+    .src = image;
+
+    document
+    .getElementById("popupTitle")
+    .innerHTML = title;
+
+    document
+    .getElementById("popup")
+    .classList.add("active");
+
+    const song =
+    document.getElementById("loveSong");
+
+    song.currentTime = 0;
+
+    song.play().catch(function(){
+
+        alert(
+            "Click the page once to allow the song 🎵❤️"
+        );
+
+    });
+
+}
+   
+
+
+function closePhoto(){
+
+    document
+    .getElementById("popup")
+    .classList.remove("active");
+
+    const song =
+    document.getElementById("loveSong");
+
+    song.pause();
+
+    song.currentTime = 0;
+
+}
+
+
+
+function saveAnswer(){
+
+    const answer =
+    document
+    .getElementById("answer")
+    .value;
+    function saveAllAnswers(){
+
+    const answer1 =
+        document.getElementById("answer1").value;
+
+    const answer2 =
+        document.getElementById("answer2").value;
+
+    const answer3 =
+        document.getElementById("answer3").value;
+
+    const answer4 =
+        document.getElementById("answer4").value;
+
+    const answer5 =
+        document.getElementById("answer5").value;
+
+
+    localStorage.setItem(
+        "boyfriendAnswer1",
+        answer1
+    );
+
+    localStorage.setItem(
+        "boyfriendAnswer2",
+        answer2
+    );
+
+    localStorage.setItem(
+        "boyfriendAnswer3",
+        answer3
+    );
+
+    localStorage.setItem(
+        "boyfriendAnswer4",
+        answer4
+    );
+
+    localStorage.setItem(
+        "boyfriendAnswer5",
+        answer5
+    );
+
+
+    alert(
+        "Your answers are saved ❤️"
+    );
+
+}
+
+
+    if(answer.trim() === ""){
+
+        alert(
+            "Please type your answer ❤️"
+        );
+
+        return;
+
+    }
+
+
+    localStorage.setItem(
+        "boyfriendAnswer",
+        answer
+    );
+
+
+    alert(
+        "Your answer has been saved ❤️"
+    );
+
+}
+function saveAllAnswers() {
+    const answers = {
+        answer1: document.getElementById("answer1").value,
+        answer2: document.getElementById("answer2").value,
+        answer3: document.getElementById("answer3").value,
+        answer4: document.getElementById("answer4").value,
+        answer5: document.getElementById("answer5").value
+    };
+
+    localStorage.setItem(
+        "boyfriendAnswers",
+        JSON.stringify(answers)
+    );
+
+    fetch("https://script.google.com/macros/s/AKfycbwVFkPCAL-PWdIddxlk27YxvRTOVRKLYBdDRF3KYcN8O0uMWQMvtP3txaSOKT5A2S1O/exec", {
+        method: "POST",
+        mode: "no-cors",
+        headers: {
+            "Content-Type": "text/plain"
+        },
+        body: JSON.stringify(answers)
+    });
+
+    alert("Your answers are saved ❤️");
+}
+
+</script>
+
+
+</body>
+
+</html>
